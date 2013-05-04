@@ -1,4 +1,9 @@
 class Project < ActiveRecord::Base
+
+  # code: A human friendly unique identifier.  Anticipating CLI tools.
+  #       Recommendation: use dots (.) for defining hierarchy.
+  # name: The name of the project.
+
   attr_accessible :code, :name
 
   validates :name, :presence => true
