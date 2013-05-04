@@ -1,6 +1,8 @@
-<h1>Editing work</h1>
+<div data-role="header">
+  <h1>Edit Time Entry</h1>
+  <%= link_to 'List', works_path %>
+</div>
 
-<%= render 'form' %>
-
-<%= link_to 'Show', @work %> |
-<%= link_to 'Back', works_path %>
+<div data-role="content">
+  <%= render 'form' %>
+</div>

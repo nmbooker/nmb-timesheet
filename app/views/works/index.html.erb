@@ -4,7 +4,7 @@
 </div>
 
 <div data-role="content">
-  <%= link_to 'New Work', new_work_path %>
+<%= link_to 'Log Time', new_work_path, {'data-role' => 'button', 'data-mini' => 'true' } %>
 
   <p id="notice"><%= notice %></p>
 
@@ -21,6 +21,4 @@
       <div align="right"><%= link_to 'Destroy', work, method: :delete, data: { confirm: 'Are you sure?' } %></div>
     </div>
   <% end %>
-
-  <%= link_to 'New Work', new_work_path %>
 </div>
