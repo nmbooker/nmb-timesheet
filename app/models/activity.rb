@@ -8,6 +8,7 @@ class Activity < ActiveRecord::Base
   attr_accessible :code, :name
 
   validates :name, :presence => true
+  validates :name, :uniqueness => true
   validates :code, :presence => true
   validates :code, :uniqueness => true
   validates :code, :format => {
