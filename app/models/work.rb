@@ -3,6 +3,10 @@ class Work < ActiveRecord::Base
   belongs_to :project
   belongs_to :activity
 
+  validates :date, presence: true
+  validates :minutes, presence: true
+  validates :minutes, numericality: { only_integer: true }
+
   default_scope order(' date DESC, created_at DESC, id DESC ')
 
 end
