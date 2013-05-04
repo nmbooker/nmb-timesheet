@@ -2,8 +2,6 @@
   <h1>Timesheet</h1>
 </div>
 <div data-role="content">
-  <ul data-role="listview">
-  <li><%= link_to 'Work Items List', controller: :works, action: :index %></li>
-  <li><%= link_to 'Log Time', controller: :works, action: :new %></li>
-  </ul>
+<%= link_to 'Work Items List', {controller: :works, action: :index}, { 'data-role' => 'button' } %>
+<%= link_to 'Log Time', {controller: :works, action: :new}, { 'data-role' => 'button' } %>
 </div>

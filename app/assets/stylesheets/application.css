@@ -12,3 +12,10 @@
  *= require_tree .
  *= require jquery.mobile
  */
+
+@media all and (min-width: 50em) {
+    .ui-content {
+        margin-left: 20%;
+        margin-right: 20%;
+    }
+}
