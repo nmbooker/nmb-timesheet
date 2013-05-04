@@ -11,27 +11,27 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :project_id %><br />
+  <div data-role="fieldcontain">
+    <%= f.label :project_id %>
     <%= f.collection_select :project_id, Project.all, :id, :name %>
   </div>
-  <div class="field">
-    <%= f.label :activity_id %><br />
+  <div data-role="fieldcontain">
+    <%= f.label :activity_id %>
     <%= f.collection_select :activity_id, Activity.all, :id, :name %>
   </div>
-  <div class="field">
-    <%= f.label :date %><br />
-    <%= f.date_select :date %>
-  </div>
-  <div class="field">
-    <%= f.label :minutes %><br />
+  <div data-role="fieldcontain">
+    <%= f.label :minutes %>
     <%= f.text_field :minutes %>
   </div>
-  <div class="field">
-    <%= f.label :description %><br />
+  <div data-role="fieldcontain">
+    <%= f.label :description %>
     <%= f.text_area :description %>
   </div>
-  <div class="actions">
+  <div data-role="fieldcontain">
+    <%= f.label :date %>
+    <%= f.date_select :date %>
+  </div>
+  <div data-role="fieldcontain">
     <%= f.submit %>
   </div>
 <% end %>
