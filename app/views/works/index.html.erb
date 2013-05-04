@@ -1,31 +1,19 @@
 <h1>Listing works</h1>
 
-<table>
-  <tr>
-    <th>Project</th>
-    <th>Activity</th>
-    <th>Date</th>
-    <th>Minutes</th>
-    <th>Description</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<%= link_to 'New Work', new_work_path %>
 
 <% @works.each do |work| %>
-  <tr>
-    <td><%= work.project_id %></td>
-    <td><%= work.activity_id %></td>
-    <td><%= work.date %></td>
-    <td><%= work.minutes %></td>
-    <td><%= work.description %></td>
-    <td><%= link_to 'Show', work %></td>
-    <td><%= link_to 'Edit', edit_work_path(work) %></td>
-    <td><%= link_to 'Destroy', work, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
+  <div class="workitem">
+    <div>
+      <%= link_to(
+        "#{work.date}: #{work.activity.name} on #{work.project.name}",
+        edit_work_path(work),
+      )%>
+    </div>
+    <div><%= work.minutes %> minutes</div>
+    <div><%= work.description %></div>
+    <div align="right"><%= link_to 'Destroy', work, method: :delete, data: { confirm: 'Are you sure?' } %></div>
+  </div>
 <% end %>
-</table>
-
-<br />
 
 <%= link_to 'New Work', new_work_path %>
