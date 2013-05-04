@@ -8,6 +8,9 @@ NmbTimesheet::Application.configure do
   config.consider_all_requests_local       = false
   config.action_controller.perform_caching = true
 
+  # Following line recommended by devise if using heroku.
+  config.assets.initialize_on_precompile = false
+
   # Disable Rails's static asset server (Apache or nginx will already do this)
   config.serve_static_assets = false
 
