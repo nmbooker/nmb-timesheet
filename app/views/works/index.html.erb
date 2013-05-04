@@ -1,19 +1,23 @@
-<h1>Listing works</h1>
+<div data-role="header">
+  <h1>Listing works</h1>
+</div>
 
-<%= link_to 'New Work', new_work_path %>
+<div data-role="content">
+  <%= link_to 'New Work', new_work_path %>
 
-<% @works.each do |work| %>
-  <div class="workitem">
-    <div>
-      <%= link_to(
-        "#{work.date}: #{work.activity.name} on #{work.project.name}",
-        edit_work_path(work),
-      )%>
+  <% @works.each do |work| %>
+    <div class="workitem">
+      <div>
+        <%= link_to(
+          "#{work.date}: #{work.activity.name} on #{work.project.name}",
+          edit_work_path(work),
+        )%>
+      </div>
+      <div><%= work.minutes %> minutes</div>
+      <div><%= work.description %></div>
+      <div align="right"><%= link_to 'Destroy', work, method: :delete, data: { confirm: 'Are you sure?' } %></div>
     </div>
-    <div><%= work.minutes %> minutes</div>
-    <div><%= work.description %></div>
-    <div align="right"><%= link_to 'Destroy', work, method: :delete, data: { confirm: 'Are you sure?' } %></div>
-  </div>
-<% end %>
+  <% end %>
 
-<%= link_to 'New Work', new_work_path %>
+  <%= link_to 'New Work', new_work_path %>
+</div>
