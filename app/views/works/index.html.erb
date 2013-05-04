@@ -5,6 +5,8 @@
 <div data-role="content">
   <%= link_to 'New Work', new_work_path %>
 
+  <p id="notice"><%= notice %></p>
+
   <% @works.each do |work| %>
     <div class="workitem">
       <div>

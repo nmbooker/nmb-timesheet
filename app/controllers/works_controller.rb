@@ -44,7 +44,7 @@ class WorksController < ApplicationController
 
     respond_to do |format|
       if @work.save
-        format.html { redirect_to @work, notice: 'Work was successfully created.' }
+        format.html { redirect_to action: 'index', flash: {notice: 'Work item was successfully created.' }}
         format.json { render json: @work, status: :created, location: @work }
       else
         format.html { render action: "new" }
