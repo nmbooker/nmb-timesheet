@@ -1,5 +1,8 @@
-<h1>New project</h1>
+<div data-role="header">
+  <h1>New project</h1>
+  <%= link_to 'List', projects_path, {'data-ajax' => 'false'} %>
+</div>
 
-<%= render 'form' %>
-
-<%= link_to 'Back', projects_path %>
+<div data-role="content">
+  <%= render 'form' %>
+</div>

@@ -1,25 +1,18 @@
-<h1>Listing projects</h1>
+<div data-role="header">
+  <h1>Projects</h1>
+  <%= link_to 'Home', { controller: 'home', action: 'index'}, {'data-role' => 'button', 'data-ajax' => 'false' } %>
+</div>
 
-<table>
-  <tr>
-    <th>Code</th>
-    <th>Name</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<div data-role="content">
+<%= link_to 'New Project', new_project_path, { 'data-role' => 'button', 'data-mini' => 'true', 'data-ajax' => 'false' } %>
 
-<% @projects.each do |project| %>
-  <tr>
-    <td><%= project.code %></td>
-    <td><%= project.name %></td>
-    <td><%= link_to 'Show', project %></td>
-    <td><%= link_to 'Edit', edit_project_path(project) %></td>
-    <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
 
-<br />
+  <ul data-role="listview" data-inset="true">
+    <% @projects.each do |project| %>
+      <li>
+      <%= link_to project.name, edit_project_path(project), { 'data-ajax' => 'false' } %>
+      </li>
+    <% end %>
+  </ul>
 
-<%= link_to 'New Project', new_project_path %>
+</div> <!-- content -->

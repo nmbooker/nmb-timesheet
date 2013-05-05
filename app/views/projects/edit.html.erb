@@ -1,6 +1,8 @@
-<h1>Editing project</h1>
+<div data-role="header">
+  <h1>Project: <%= @project.code %></h1>
+  <%= link_to 'List', projects_path, {'data-ajax' => 'false'} %>
+</div>
 
-<%= render 'form' %>
-
-<%= link_to 'Show', @project %> |
-<%= link_to 'Back', projects_path %>
+<div data-role="content">
+  <%= render 'form' %>
+</div>
