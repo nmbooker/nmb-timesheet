@@ -6,11 +6,11 @@
 <div data-role="content">
 
 <%= link_to 'New Activity', new_activity_path, {'data-role' => 'button', 'data-mini' => 'true', 'data-ajax' => 'false'} %>
+<ul data-role="listview" data-inset="true">
 <% @activities.each do |activity| %>
-  <div class="activity-item">
-  <%= link_to "#{activity.code}: #{activity.name}", edit_activity_path(activity) %>
-  </div>
+  <li>
+    <%= link_to "#{activity.code}: #{activity.name}", edit_activity_path(activity) %>
+  </li>
 <% end %>
-  </tr>
-</table>
+</ul>
 </div>
