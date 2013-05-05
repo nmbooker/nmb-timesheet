@@ -1,10 +1,12 @@
 <div data-role="header">
   <h1>Listing works</h1>
-  <%= link_to 'Home', controller: :home, action: :index %>
+  <%= link_to 'Home', {controller: :home, action: :index}, 'data-ajax' => 'false'
+  %>
 </div>
 
 <div data-role="content">
-<%= link_to 'Log Time', new_work_path, {'data-role' => 'button', 'data-mini' => 'true' } %>
+<%= link_to 'Log Time', new_work_path, {'data-role' => 'button', 'data-mini' => 'true', 'data-ajax' => 'false' } %>
+<%= link_to 'CSV', {controller: 'works', action: 'index', format: 'csv'}, {'data-role' => 'button', 'data-mini' => 'true', 'data-ajax' => 'false' } %>
 
   <p id="notice"><%= notice %></p>
 
