@@ -1,9 +1,8 @@
 <div data-role="header">
   <h1>New activity</h1>
+  <%= link_to 'List', activities_path, {'data-ajax' => 'false'} %>
 </div>
 
 <div data-role="content">
   <%= render 'form' %>
-
-  <%= link_to 'Back', activities_path %>
 </div>

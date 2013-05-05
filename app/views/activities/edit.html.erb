@@ -1,6 +1,8 @@
-<h1>Editing activity</h1>
+<div data-role="header">
+  <h1>Editing activity</h1>
+  <%= link_to 'List', activities_path, {'data-ajax' => 'false'} %>
+</div>
 
-<%= render 'form' %>
-
-<%= link_to 'Show', @activity %> |
-<%= link_to 'Back', activities_path %>
+<div data-role="content">
+  <%= render 'form' %>
+</div>
