@@ -9,7 +9,7 @@
 <ul data-role="listview" data-inset="true">
 <% @activities.each do |activity| %>
   <li>
-    <%= link_to "#{activity.code}: #{activity.name}", edit_activity_path(activity) %>
+    <%= link_to activity.name, edit_activity_path(activity) %>
   </li>
 <% end %>
 </ul>
