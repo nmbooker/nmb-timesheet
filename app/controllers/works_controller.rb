@@ -1,3 +1,5 @@
+require 'csv'
+
 class WorksController < ApplicationController
   before_filter :authenticate_user!
 
@@ -9,6 +11,15 @@ class WorksController < ApplicationController
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @works }
+      format.csv {
+        data = self.csvdata(@works)
+        data_to_send = CSV.generate do |csv|
+          data.each do |row|
+            csv << row
+          end
+        end
+        send_data data_to_send
+      }
     end
   end
 
@@ -82,4 +93,24 @@ class WorksController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  protected
+    def csvdata(works)
+      lines = []
+      header = ['id', 'date', 'project.code', 'project.name', 'activity.code', 'activity.name', 'minutes', 'description']
+      lines << header
+      for w in works
+        lines << [
+          w.id,
+          w.date,
+          w.project.code,
+          w.project.name,
+          w.activity.code,
+          w.activity.name,
+          w.minutes,
+          w.description,
+        ]
+      end
+      return lines
+    end
 end
