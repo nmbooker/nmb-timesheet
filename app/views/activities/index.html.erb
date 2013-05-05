@@ -1,25 +1,16 @@
-<h1>Listing activities</h1>
+<div data-role="header">
+  <h1>Listing activities</h1>
+  <%= link_to 'Home', {controller: 'home', action: 'index'}, {'data-ajax' => 'false'} %>
+</div>
 
-<table>
-  <tr>
-    <th>Code</th>
-    <th>Name</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<div data-role="content">
 
+<%= link_to 'New Activity', new_activity_path, {'data-role' => 'button', 'data-mini' => 'true', 'data-ajax' => 'false'} %>
 <% @activities.each do |activity| %>
-  <tr>
-    <td><%= activity.code %></td>
-    <td><%= activity.name %></td>
-    <td><%= link_to 'Show', activity %></td>
-    <td><%= link_to 'Edit', edit_activity_path(activity) %></td>
-    <td><%= link_to 'Destroy', activity, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
+  <div class="activity-item">
+  <%= link_to "#{activity.code}: #{activity.name}", edit_activity_path(activity) %>
+  </div>
 <% end %>
+  </tr>
 </table>
-
-<br />
-
-<%= link_to 'New Activity', new_activity_path %>
+</div>
