@@ -16,6 +16,8 @@ group :production, :heroku do
   gem 'pg'
 end
 
+gem 'rails_12factor'
+
 
 # Gems used only for assets and not required
 # in production environments by default.
