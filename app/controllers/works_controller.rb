@@ -73,7 +73,7 @@ class WorksController < ApplicationController
 
     respond_to do |format|
       if @work.update_attributes(params[:work])
-        format.html { redirect_to @work, notice: 'Work was successfully updated.' }
+        format.html { redirect_to action: 'index', flash: {notice: 'Work item was successfully updated.' }}
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
